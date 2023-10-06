@@ -17,8 +17,8 @@ class CourseController extends Controller
     public function createNewCourse (Request $request) {
         $validatedData = $request->validate([
             'name' => 'required|string',
-            'description ' => 'required|text',
-            'steps' => 'required|text',
+            'description' => 'required|string',
+            'steps' => 'required|string',
         ]);
 
         $course = new Course;
@@ -52,4 +52,5 @@ class CourseController extends Controller
 
         return response()->json(['message'=>'Course Deleted Successfully']);
     }
+
 }
