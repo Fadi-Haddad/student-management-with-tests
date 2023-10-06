@@ -13,4 +13,21 @@ class CourseController extends Controller
         return response()->json(['Courses'=>$courses]);
 
     }
+
+    public function createNewCourse (Request $request) {
+        $validatedData = $request->validate([
+            'name' => 'required|string',
+            'description ' => 'required|text',
+            'steps' => 'required|text',
+        ]);
+
+        $course = new Course;
+        $course->name = $validatedData['name'];
+        $course->description = $validatedData['description'];
+        $course->steps = $validatedData['steps'];
+        $course->save();
+
+        return response()->json(['message' => 'Course Created Successfully']);
+
+    }
 }
