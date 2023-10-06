@@ -30,4 +30,14 @@ class CourseController extends Controller
         return response()->json(['message' => 'Course Created Successfully']);
 
     }
+
+    public function getCourseByID($id) {
+        $course = Course::find($id);
+
+        if (!$course) {
+            return response()->json(['message' => 'Course Not Found'], 404);
+        }
+
+        return response()->json(['course'=>$course]);
+    }
 }
