@@ -40,4 +40,16 @@ class CourseController extends Controller
 
         return response()->json(['course'=>$course]);
     }
+
+    public function deleteCourseByID($id) {
+        $course = Course::find($id);
+
+        if (!$course) {
+            return response()->json(['message' => 'Course not found'], 404);
+        }
+
+        $course->delete();
+
+        return response()->json(['message'=>'Course Deleted Successfully']);
+    }
 }
