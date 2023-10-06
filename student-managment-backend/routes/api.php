@@ -26,3 +26,4 @@ Route::delete('/students/{id}', 'StudentController@deleteStudentByID');
 Route::get('/courses', 'StudentController@getAllCourses');
 Route::get('/create-new-course', 'StudentController@createNewCourse');
 Route::get('/courses/{id}', 'StudentController@getCourseByID');
+Route::delete('/courses/{id}', 'StudentController@deleteCourseByID');
