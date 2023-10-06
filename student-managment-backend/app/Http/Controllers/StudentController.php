@@ -29,4 +29,14 @@ class StudentController extends Controller
         return response()->json(['message' => 'User Created Successfully']);
 
     }
+
+    public function getStudentByID($id) {
+        $student = Student::find($id);
+
+        if (!$student) {
+            return response()->json(['message' => 'Student not found'], 404);
+        }
+
+        return response()->json(['student'=>$student]);
+    }
 }
