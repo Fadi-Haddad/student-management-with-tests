@@ -15,7 +15,7 @@ class StudentController extends Controller
         return response()->json(['students'=>$students]);
     }
 
-    public function createNewUser(Request $request){
+    public function createNewStudent(Request $request){
         $validatedData = $request->validate([
             'name' => 'required|string',
             'age' => 'required|integer',
@@ -46,7 +46,7 @@ class StudentController extends Controller
         if (!$student) {
             return response()->json(['message' => 'Student not found'], 404);
         }
-        
+
         $student->delete();
 
         return response()->json(['message'=>'Student Deleted Successfully']);
