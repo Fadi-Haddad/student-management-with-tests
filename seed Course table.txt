@@ -1,0 +1,13 @@
+use App\Models\Course;
+
+$course1 = new Course();
+$course1->name = 'Autocad';
+$course1->description = 'Introduction to Autocad';
+$course1->steps = 'Step 1, Step 2, Step 3, step 4, step 5';
+$course1->save();
+
+$course2 = new Course();
+$course2->name = 'Laravel';
+$course2->description = 'Introduction to Laravel';
+$course2->steps = 'Step 1, Step 2, Step 3';
+$course2->save();
