@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/students', 'StudentController@getAllStudents');
 Route::get('/create-new-user', 'StudentController@createNewUser');
+Route::get('/students/{id}', 'StudentController@getStudentByID');
