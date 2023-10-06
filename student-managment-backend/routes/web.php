@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentWebController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/display-students', 'StudentWebController@displayStudents')->name('students.displayall');
+Route::get('/display-students', [StudentWebController::class, 'displayStudents'])->name('students.displayall');
 
 require __DIR__.'/auth.php';
