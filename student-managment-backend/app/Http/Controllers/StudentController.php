@@ -24,7 +24,7 @@ class StudentController extends Controller
         $student = new Student;
         $student->name = $validatedData['name'];
         $student->age = $validatedData['age'];
-        $student.save();
+        $student->save();
 
         return response()->json(['message' => 'User Created Successfully']);
 
