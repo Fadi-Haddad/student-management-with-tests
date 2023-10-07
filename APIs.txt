@@ -1,0 +1,10 @@
+(GET)http://127.0.0.1:8000/api/students                                  Get All Students
+(GET)http://127.0.0.1:8000/api/create-new-student?name=John&age=40       Create New Student  
+(GET)http://127.0.0.1:8000/api/students/1                                Get Student info by ID
+(DELETE)http://127.0.0.1:8000/api/students/1                             Delete Student by ID
+
+
+(GET)http://127.0.0.1:8000/api/create-new-course?name=AWS&description=AWS Cloud Practioner&steps=step1, step2, step3
+(GET)http://127.0.0.1:8000/api/courses                                       Get All Courses
+(GET)http://127.0.0.1:8000/api/courses/1                                     Get course By ID
+(DELETE)http://127.0.0.1:8000/api/courses/1                                  Delete Courses by ID

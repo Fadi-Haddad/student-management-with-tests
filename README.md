@@ -4,7 +4,7 @@
 
 ### Prerequisites
 
-1. Download Node.js installer from [https://nodejs.org/en/download]
+1. Download Node.js from [https://nodejs.org/en/download]
     
 2. Download XAMPP from [https://www.apachefriends.org/download.html]
 
@@ -21,7 +21,7 @@
     git clone https://github.com/Fadi-Haddad/student-management.git
     ```
 
-4. Run the following command to install the Laravel app dependencies
+4. Run the following command to install Laravel dependencies
     ```sh
     composer install
     ```
@@ -47,3 +47,4 @@
     ```sh
     php artisan serve
     ```
+7. Test the APIs available inside APIs.txt With a Testing Tool Like POSTMAN
