@@ -18,6 +18,6 @@ Route::delete('/courses/{id}', [CourseController::class, 'deleteCourseByID']);
 
 
 Route::get('/students', [StudentController::class, 'getAllStudents']);
-Route::get('/create-new-student', [StudentController::class, 'createNewStudent']);
+Route::post('/create-new-student', [StudentController::class, 'createNewStudent']);
 Route::get('/students/{id}', [StudentController::class, 'getStudentByID']);
 Route::delete('/students/{id}', [StudentController::class, 'deleteStudentByID']);
