@@ -12,7 +12,7 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-
+    
     public function test_getAllStudents()
     {
         $response = $this->get('/api/students');
@@ -21,6 +21,18 @@ class ExampleTest extends TestCase
         $response->assertJsonStructure(['students']);
     }
 
+    public function test_createNewStudent()
+    {
+        $data = [
+            'name' => 'New User',
+            'age' => 40,
+        ];
+
+        $response = $this->post('/api/create-new-student', $data);
+
+        $response->assertStatus(200);
+        $response->assertJson(['message' => 'User Created Successfully']);
+    }
 }
 
 
