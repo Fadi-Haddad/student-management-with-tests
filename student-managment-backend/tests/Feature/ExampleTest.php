@@ -1,7 +1,7 @@
 <?php
 
 namespace Tests\Feature;
-
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Student;
 use Tests\TestCase;
 
@@ -12,6 +12,7 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
+    use RefreshDatabase;
     
     public function test_getAllStudents()
     {
