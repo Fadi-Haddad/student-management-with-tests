@@ -13,7 +13,7 @@ class ExampleTest extends TestCase
      * @return void
      */
     use RefreshDatabase;
-    
+
     public function test_getAllStudents()
     {
         $response = $this->get('/api/students');
@@ -33,6 +33,17 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertJson(['message' => 'User Created Successfully']);
+    }
+
+    public function test_getStudentByID()
+    {
+
+        $student = Student::factory()->create();
+
+        $response = $this->get('/api/students/'.$student->id);
+
+        $response->assertStatus(200);
+        $response->assertJsonStructure(['student']);
     }
 }
 
