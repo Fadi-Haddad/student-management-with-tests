@@ -27,7 +27,15 @@
     ```
 5. Rename .env.example file to .env and change database settings to suit your environment
 
-6. Navigate to student-managment-backend folder
+6. Generate a new key for Laravel App:
+    ```sh
+    php artisan key:generate
+    ```
+7. Run the following command to install Vite:
+    ```sh
+    npm install --save-dev vite laravel-vite-plug
+    ```
+8. Navigate to student-managment-backend folder
     * Create the database tables
     ```sh
     php artisan migrate
@@ -42,9 +50,12 @@
     ```sh
     php artisan db:seed --class=UsersTableSeeder
     ```
-    
-    * Start the Laravel app
+    * Open a second terminal and run the following:
+    ```sh
+    npm run dev
+    ```
+    * Start the Laravel app (in the first terminal)
     ```sh
     php artisan serve
     ```
-7. Test the APIs available inside APIs.txt With a Testing Tool Like POSTMAN
+9. Test the APIs available inside APIs.txt with a testing tool like POSTMAN
