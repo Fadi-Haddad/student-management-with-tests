@@ -88,6 +88,16 @@ class ExampleTest extends TestCase
         $response->assertJsonStructure(['course']);
     }
 
+    public function test_deleteCourseByID() {
+
+        $course = Course::factory()->create();
+
+        $response = $this->delete('/api/courses/' .$course->id);
+
+        $response->assertStatus(200);
+        $response->assertJson(['message'=>'Course Deleted Successfully']);
+
+    }
 }
 
 
