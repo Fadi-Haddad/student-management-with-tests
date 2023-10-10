@@ -58,11 +58,24 @@ class ExampleTest extends TestCase
     }
 
     public function test_getAllCourses(){
-        
+
         $response = $this->get('/api/courses');
 
         $response->assertStatus(200);
         $response->assertJsonStructure(['Courses']);
+    }
+
+    public function test_createNewCourse(){
+        $data = [
+            'name' => "some course name",
+            'description' => 'some description',
+            'steps' => 'some steps',
+        ];
+
+        $response = $this->post('/api/create-new-course' , $data);
+
+        $response->assertStatus(200);
+        $response->assertJson(['message' => 'Course Created Successfully']);
     }
 
 }

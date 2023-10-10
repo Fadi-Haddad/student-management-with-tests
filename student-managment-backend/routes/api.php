@@ -12,7 +12,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/courses', [CourseController::class, 'getAllCourses']);
-Route::get('/create-new-course', [CourseController::class, 'createNewCourse']);
+Route::post('/create-new-course', [CourseController::class, 'createNewCourse']);
 Route::get('/courses/{id}', [CourseController::class, 'getCourseByID']);
 Route::delete('/courses/{id}', [CourseController::class, 'deleteCourseByID']);
 
