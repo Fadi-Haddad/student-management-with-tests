@@ -78,6 +78,16 @@ class ExampleTest extends TestCase
         $response->assertJson(['message' => 'Course Created Successfully']);
     }
 
+    public function test_getCourseByID() {
+
+        $course = Course::factory()->create();
+
+        $response = $this->get('/api/courses/' . $course->id);
+
+        $response->assertStatus(200);
+        $response->assertJsonStructure(['course']);
+    }
+
 }
 
 
