@@ -59,3 +59,7 @@
     php artisan serve
     ```
 9. Test the APIs available inside APIs.txt with a testing tool like POSTMAN
+10. For the feature testing and test coverage, Run the following command :
+    ```sh
+    vendor/bin/phpunit --coverage-html coverage-report
+    ```
