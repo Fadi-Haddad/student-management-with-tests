@@ -45,6 +45,16 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
         $response->assertJsonStructure(['student']);
     }
+
+    public function test_deleteStudentByID()
+    {
+        $student = Student::factory()->create();
+
+        $response = $this->delete('/api/students/' . $student->id);
+
+        $response->assertStatus(200);
+        $response->assertJson(['message' => 'Student Deleted Successfully']);
+    }
 }
 
 
