@@ -98,6 +98,17 @@ class ExampleTest extends TestCase
         $response->assertJson(['message'=>'Course Deleted Successfully']);
 
     }
+
+    public function test_displayStudents(){
+
+        $students = Student::factory()->count(3)->create();
+
+        $response = $this->get('/display-students',);
+
+        $response->assertStatus(200);
+        $response->assertViewIs('students.displayall');
+        
+    }
 }
 
 
