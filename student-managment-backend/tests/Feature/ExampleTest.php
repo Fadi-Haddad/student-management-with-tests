@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Student;
+use App\Models\Course;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
@@ -55,6 +56,15 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
         $response->assertJson(['message' => 'Student Deleted Successfully']);
     }
+
+    public function test_getAllCourses(){
+        
+        $response = $this->get('/api/courses');
+
+        $response->assertStatus(200);
+        $response->assertJsonStructure(['Courses']);
+    }
+
 }
 
 
